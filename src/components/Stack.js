@@ -4,6 +4,8 @@ import mixing from '../media/mixing.png';
 import vdf from '../media/vdf.png';
 import person from '../media/person.svg';
 import arrow from '../media/arrow.svg';
+import person_blue from '../media/person_blue.svg';
+
 class Stack extends Component {
   render() {
     let step = this.props.step;
