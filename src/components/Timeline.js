@@ -7,56 +7,59 @@ class Timeline extends Component {
 
   render() {
     return (
-      <Box>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Title>Timeslot: {this.props.data[this.props.step].current_epoch_id}</Title>
-          <Title>
-            Beacon Validator ID:{' '}
-            {(Number(this.props.data[this.props.step].current_random_seed_r_j) * -1).toString().substring(0, 5) + '...'}
-          </Title>
-          <Title>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</Title>
-          <Title>
-            Current Random Seed:{' '}
-            {this.props.data[this.props.step].current_random_seed_r_j.toString().substring(0, 5) + '...'}
-          </Title>
-        </div>
+      <div>
+        <Box>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <Title>Timeslot: {this.props.data[this.props.step].current_epoch_id}</Title>
+            <Title>
+              Beacon Validator ID:{' '}
+              {(Number(this.props.data[this.props.step].current_random_seed_r_j) * -1).toString().substring(0, 5) +
+                '...'}
+            </Title>
+            <Title>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</Title>
+            <Title>
+              Current Random Seed:{' '}
+              {this.props.data[this.props.step].current_random_seed_r_j.toString().substring(0, 5) + '...'}
+            </Title>
+          </div>
 
-        <div>
-          {this.state.epocs.map((v, k) => {
-            return (
-              <Slot multi={k}>
-                <Epoc data={this.props.data} step={this.props.step} key={k} index={k}/>
-              </Slot>
-            );
-          })}
-        </div>
+          <div>
+            {this.state.epocs.map((v, k) => {
+              return (
+                <Slot multi={k}>
+                  <Epoc data={this.props.data} step={this.props.step} key={k} index={k} />
+                </Slot>
+              );
+            })}
+          </div>
 
-        <button
-          onClick={() => {
-            this.props.next();
-          }}
-        >
-          Next
-        </button>
+          <button
+            onClick={() => {
+              this.props.next();
+            }}
+          >
+            Next
+          </button>
 
-        <button
-          onClick={() => {
-            this.props.next5();
-          }}
-        >
-          Next5
-        </button>
+          <button
+            onClick={() => {
+              this.props.next5();
+            }}
+          >
+            Next5
+          </button>
 
-        <button
-          onClick={() => {
-            this.props.prev();
-          }}
-        >
-          Previous
-        </button>
+          <button
+            onClick={() => {
+              this.props.prev();
+            }}
+          >
+            Previous
+          </button>
 
-        <div>Current time slot:{this.props.step}</div>
-      </Box>
+          <div>Current time slot:{this.props.step}</div>
+        </Box>
+      </div>
     );
   }
 }
@@ -80,7 +83,7 @@ const Title = styled.div`
 `;
 
 const Slot = styled.div`
-  padding-left: ${props => props.multi * 50}px;
+  padding-left: ${props => props.multi * 100}px;
   /* padding-left: 50px; */
   font-weight: bold;
   margin: 20px;
