@@ -223,9 +223,8 @@ const TopNav = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  margin-left: 110px;
-  margin-right: 83px;
+  margin-left: 90px;
+  margin-right: 20px;
 `;
 
 const Process = styled.div`
