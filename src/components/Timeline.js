@@ -25,6 +25,13 @@ class Timeline extends Component {
           Next
         </button>
 
+        <button
+            onClick={() => {
+                this.props.next5();
+            }}
+         >
+          Next5
+         </button>
 
         <button
             onClick={() => {
@@ -33,6 +40,7 @@ class Timeline extends Component {
          >
           Previous
          </button>
+
         <div>Current slot:{this.props.step}</div>
       </div>
     );
