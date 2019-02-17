@@ -16,10 +16,10 @@ class Stack extends Component {
           <Epoc>
             <div>
               <div>Epoc ?</div>
+              <div>Mixing</div>
             </div>
             <TopNav>
               <div>Number</div>
-              <div>f(x)</div>
               <div>Hashed</div>
               <div>Reveal</div>
             </TopNav>

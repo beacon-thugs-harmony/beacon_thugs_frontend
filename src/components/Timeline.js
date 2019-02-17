@@ -24,6 +24,15 @@ class Timeline extends Component {
         >
           Next
         </button>
+
+
+        <button
+            onClick={() => {
+                this.props.prev();
+            }}
+         >
+          Previous
+         </button>
         <div>Current slot:{this.props.step}</div>
       </div>
     );
