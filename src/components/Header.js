@@ -24,7 +24,6 @@ class Header extends Component {
         </Box>
         <Box>
           <Title>Validators</Title>
-
           <UserSpace>
             {this.state.humans.map((v, k) => {
               return <UserImg src={person} key={k} />;
