@@ -25,6 +25,7 @@ class Stack extends Component {
             </TopNav>
             <Process>
               <div>P1</div>
+              <img src={person}/>
               <div>{this.props.data[step - stepMod4].validator_revealed_entropy}</div>
               <div>hash</div>
               <div>{this.props.data[step - stepMod4].validator_committed_hash_of_entropy}</div>
@@ -32,6 +33,7 @@ class Stack extends Component {
             </Process>
             <Process>
               <div>P2</div>
+              <img src={person}/>
               <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy}</div>
               <div>hash</div>
               <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_committed_hash_of_entropy}</div>
@@ -39,6 +41,7 @@ class Stack extends Component {
             </Process>
             <Process>
               <div>P3</div>
+              <img src={person}/>
               <div>
                 {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy}
               </div>
@@ -54,6 +57,7 @@ class Stack extends Component {
             </Process>
             <Process>
               <div>P4</div>
+              <img src={person}/>
               <div>
                 {stepMod4 !== 0 &&
                   stepMod4 !== 1 &&
