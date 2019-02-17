@@ -94,8 +94,7 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF</div>
-              <div>Math! - {!(step < 4) && this.props.data[step - (stepMod4 - 3)].current_entropy_e_i.toString().substring(0, 5) + '...'}}}</div>
-              <div>Loading</div>
+              <div>Calculating: {!(step < 4) && this.props.data[step - (stepMod4 - 3)].current_entropy_e_i.toString().substring(0, 5) + '...'}</div>
             </Row>
           </Epoc>
           <Epoc>
@@ -104,8 +103,7 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF</div>
-              <div>Math! - {!(step < 8) && this.props.data[step - (step % 4) - 8].current_entropy_e_i.toString().substring(0, 5) + '...'}}</div>
-              <div>Loading</div>
+              <div>Calculating: {!(step < 8) && this.props.data[step - (step % 4) - 8].current_entropy_e_i.toString().substring(0, 5) + '...'}</div>
             </Row>
           </Epoc>
 
@@ -115,7 +113,7 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF</div>
-              <div>Result^2^T%N = {!(step < 12) && this.props.data[step - (step % 4) - 12].current_entropy_e_i.toString().substring(0, 5) + '...'}}</div>
+              <div>Finalized: {!(step < 12) && this.props.data[step - (step % 4) - 12].current_entropy_e_i.toString().substring(0, 5) + '...'}</div>
             </Row>
           </Epoc>
         </Holder>
