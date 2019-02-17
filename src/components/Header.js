@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/macro';
 import person from '../media/person.svg';
+import person_red from '../media/person_red.svg';
+import person_green from '../media/person_green.svg';
+import person_blue from '../media/person_blue.svg';
+import person_grey from '../media/person_grey.svg';
 import shard from '../media/shard.svg';
+import shard_blue from '../media/shard_blue.svg';
 
 class Header extends Component {
   state = {
@@ -15,18 +20,24 @@ class Header extends Component {
       <Inner>
         <Box>
           <Title>Shards</Title>
-
           <ShardSpace>
             <img src={shard} />
             <img src={shard} />
             <img src={shard} />
           </ShardSpace>
+          <div>Shard 0 Validator:{this.props.data[this.props.step].shard_validator[0]}</div>
+          <div>Shard 1 Validator:{this.props.data[this.props.step].shard_validator[1]}</div>
+          <div>Shard 2 Validator:{this.props.data[this.props.step].shard_validator[2]}</div>
         </Box>
         <Box>
           <Title>Validators</Title>
           <UserSpace>
             {this.state.humans.map((v, k) => {
-              return <UserImg src={person} key={k} id={k} />;
+              if (k == this.props.data[this.props.step].current_beacon_validator_id) {
+                return <UserImg src={person_green} key={k} />;
+              } else {
+                return <UserImg src={person} key={k} />;
+              }
             })}
             <div>Beacon Validator ID:{this.props.data[this.props.step].current_beacon_validator_id}</div>
           </UserSpace>
