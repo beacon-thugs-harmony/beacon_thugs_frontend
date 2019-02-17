@@ -28,33 +28,33 @@ class Stack extends Component {
             <Process>
               <div>P1</div>
               <img src={person} />
-              <div>{this.props.data[step - stepMod4].validator_revealed_entropy}</div>
+              <div>{this.props.data[step - stepMod4].validator_revealed_entropy.toString().substring(0, 5) + '...'}</div>
               <div>hash</div>
-              <div>{this.props.data[step - stepMod4].validator_committed_hash_of_entropy}</div>
-              <div>{this.props.data[step - stepMod4].validator_revealed_entropy}</div>
+              <div>{this.props.data[step - stepMod4].validator_committed_hash_of_entropy.toString().substring(0, 5) + '...'}</div>
+              <div>{this.props.data[step - stepMod4].validator_revealed_entropy.toString().substring(0, 5) + '...'}</div>
             </Process>
             <Process>
               <div>P2</div>
               <img src={person} />
-              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy}</div>
+              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy.toString().substring(0, 5) + '...'}</div>
               <div>hash</div>
-              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_committed_hash_of_entropy}</div>
-              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy}</div>
+              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_committed_hash_of_entropy.toString().substring(0, 5) + '...'}</div>
+              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy.toString().substring(0, 5) + '...'}</div>
             </Process>
             <Process>
               <div>P3</div>
               <img src={person} />
               <div>
-                {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy}
+                {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy.toString().substring(0, 5) + '...'}
               </div>
               <div>hash</div>
               <div>
                 {stepMod4 !== 0 &&
                   stepMod4 !== 1 &&
-                  this.props.data[step - (stepMod4 - 2)].validator_committed_hash_of_entropy}
+                  this.props.data[step - (stepMod4 - 2)].validator_committed_hash_of_entropy.toString().substring(0, 5) + '...'}
               </div>
               <div>
-                {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy}
+                {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy.toString().substring(0, 5) + '...'}
               </div>
             </Process>
             <Process>
@@ -64,20 +64,20 @@ class Stack extends Component {
                 {stepMod4 !== 0 &&
                   stepMod4 !== 1 &&
                   stepMod4 !== 2 &&
-                  this.props.data[step - (stepMod4 - 3)].validator_revealed_entropy}
+                  this.props.data[step - (stepMod4 - 3)].validator_revealed_entropy.toString().substring(0, 5) + '...'}
               </div>
               <div>hash</div>
               <div>
                 {stepMod4 !== 0 &&
                   stepMod4 !== 1 &&
                   stepMod4 !== 2 &&
-                  this.props.data[step - (stepMod4 - 3)].validator_committed_hash_of_entropy}
+                  this.props.data[step - (stepMod4 - 3)].validator_committed_hash_of_entropy.toString().substring(0, 5) + '...'}
               </div>
               <div>
                 {stepMod4 !== 0 &&
                   stepMod4 !== 1 &&
                   stepMod4 !== 2 &&
-                  this.props.data[step - (stepMod4 - 3)].validator_revealed_entropy}
+                  this.props.data[step - (stepMod4 - 3)].validator_revealed_entropy.toString().substring(0, 5) + '...'}
               </div>
 
               <div>
@@ -85,7 +85,7 @@ class Stack extends Component {
                 {stepMod4 !== 0 &&
                   stepMod4 !== 1 &&
                   stepMod4 !== 2 &&
-                  this.props.data[step - (stepMod4 - 3)].current_entropy_e_i}
+                  this.props.data[step - (stepMod4 - 3)].current_entropy_e_i.toString().substring(0, 5) + '...'}
               </div>
             </Process>
           </Epoc>
@@ -98,8 +98,8 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF:</div>
-              <div>{step > 3 ? this.props.data[step - 1 - (step % 4) - 4 * 0].vdf_input : 'Nothing'} ^2^T%N = </div>
-              <div>{step > 3 ? 'Loading' : 'Nothing'}</div>
+              <div>{step > 3 ? this.props.data[step - 1 - (step % 4) - 4 * 0].vdf_input.toString().substring(0, 5) + '...' : 'None'} = </div>
+              <div>{step > 3 ? '... Calculating' : 'None'}</div>
             </Row>
           </Epoc>
           <Epoc>
@@ -110,8 +110,8 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF:</div>
-              <div>{step > 7 ? this.props.data[step - 1 - (step % 4) - 4 * 1].vdf_input : 'Nothing'} ^2^T%N = </div>
-              <div>{step > 7 ? 'Loading' : 'Nothing'}</div>
+              <div>{step > 7 ? this.props.data[step - 1 - (step % 4) - 4 * 1].vdf_input.toString().substring(0, 5) + '...' : 'None'} = </div>
+              <div>{step > 7 ? '... Calculating' : 'None'}</div>
             </Row>
           </Epoc>
 
@@ -123,8 +123,8 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF:</div>
-              <div>{step > 11 ? this.props.data[step - 1 - (step % 4) - 4 * 2].vdf_input : 'Nothing'} ^2^T%N = </div>
-              <div>{step > 11 ? this.props.data[step - 1 - (step % 4) - 4 * 2].vdf_output_r_i : 'Nothing'}</div>
+              <div>{step > 11 ? this.props.data[step - 1 - (step % 4) - 4 * 2].vdf_input.toString().substring(0, 5) + '...' : 'None'} = </div>
+              <div>{step > 11 ? this.props.data[step - 1 - (step % 4) - 4 * 2].vdf_output_r_i.toString().substring(0, 5) + '... Finalized': 'None'}</div>
             </Row>
           </Epoc>
         </Holder>
