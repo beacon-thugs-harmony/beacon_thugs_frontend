@@ -26,7 +26,7 @@ class Header extends Component {
           <Title>Validators</Title>
           <UserSpace>
             {this.state.humans.map((v, k) => {
-              return <UserImg src={person} key={k} />;
+              return <UserImg src={person} key={k} id={k} />;
             })}
             <div>Beacon Validator ID:{this.props.data[this.props.step].current_beacon_validator_id}</div>
           </UserSpace>

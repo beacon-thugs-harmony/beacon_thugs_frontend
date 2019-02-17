@@ -20,7 +20,7 @@ export default Epoc;
 
 const Box = styled.div`
   display: flex;
-  width: 310px;
+  width: 292px;
   justify-content: space-around;
   height: 40px;
   background-color: #a2dbac;
