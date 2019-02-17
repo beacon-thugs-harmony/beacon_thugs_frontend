@@ -5,6 +5,10 @@ import vdf from '../media/vdf.png';
 
 class Stack extends Component {
   render() {
+    let step = this.props.step;
+    let stepMod4 = step % 4;
+    let stepSmallerThan4 = step < 4;
+
     return (
       <div>
         <Holder>
@@ -19,18 +23,63 @@ class Stack extends Component {
               <div>Reveal</div>
             </TopNav>
             <Process>
-              <div>p1</div>
-              <div>32</div>
+              <div>P1</div>
+              <div>{this.props.data[step - stepMod4].validator_revealed_entropy}</div>
               <div>hash</div>
-              <div>43X22f</div>
-              <div>32</div>
+              <div>{this.props.data[step - stepMod4].validator_committed_hash_of_entropy}</div>
+              <div>{this.props.data[step - stepMod4].validator_revealed_entropy}</div>
             </Process>
             <Process>
-              <div>p2</div>
-              <div>253</div>
+              <div>P2</div>
+              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy}</div>
               <div>hash</div>
-              <div>xg22f</div>
-              <div>253</div>
+              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_committed_hash_of_entropy}</div>
+              <div>{stepMod4 !== 0 && this.props.data[step - (stepMod4 - 1)].validator_revealed_entropy}</div>
+            </Process>
+            <Process>
+              <div>P3</div>
+              <div>
+                {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy}
+              </div>
+              <div>hash</div>
+              <div>
+                {stepMod4 !== 0 &&
+                  stepMod4 !== 1 &&
+                  this.props.data[step - (stepMod4 - 2)].validator_committed_hash_of_entropy}
+              </div>
+              <div>
+                {stepMod4 !== 0 && stepMod4 !== 1 && this.props.data[step - (stepMod4 - 2)].validator_revealed_entropy}
+              </div>
+            </Process>
+            <Process>
+              <div>P4</div>
+              <div>
+                {stepMod4 !== 0 &&
+                  stepMod4 !== 1 &&
+                  stepMod4 !== 2 &&
+                  this.props.data[step - (stepMod4 - 3)].validator_revealed_entropy}
+              </div>
+              <div>hash</div>
+              <div>
+                {stepMod4 !== 0 &&
+                  stepMod4 !== 1 &&
+                  stepMod4 !== 2 &&
+                  this.props.data[step - (stepMod4 - 3)].validator_committed_hash_of_entropy}
+              </div>
+              <div>
+                {stepMod4 !== 0 &&
+                  stepMod4 !== 1 &&
+                  stepMod4 !== 2 &&
+                  this.props.data[step - (stepMod4 - 3)].validator_revealed_entropy}
+              </div>
+
+              <div>
+                result{' '}
+                {stepMod4 !== 0 &&
+                  stepMod4 !== 1 &&
+                  stepMod4 !== 2 &&
+                  this.props.data[step - (stepMod4 - 3)].current_entropy_e_i}
+              </div>
             </Process>
           </Epoc>
 
@@ -40,7 +89,17 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF</div>
-              <div>Math!</div>
+              <div>Math! - {!(step < 4) && this.props.data[step - ((step % 4) - step)].current_entropy_e_i}}</div>
+              <div>Loading</div>
+            </Row>
+          </Epoc>
+          <Epoc>
+            <div>
+              <div>Epoc ?</div>
+            </div>
+            <Row>
+              <div>VDF</div>
+              <div>Math! - {!(step < 8) && this.props.data[step - (stepMod4 - 3)].current_entropy_e_i}}</div>
               <div>Loading</div>
             </Row>
           </Epoc>
@@ -51,7 +110,7 @@ class Stack extends Component {
             </div>
             <Row>
               <div>VDF</div>
-              <div>Result^2^T%N = 2313282...</div>
+              <div>Result^2^T%N = {!(step < 12) && this.props.data[step - (stepMod4 - 3)].current_entropy_e_i}}</div>
             </Row>
           </Epoc>
         </Holder>
