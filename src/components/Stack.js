@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components/macro';
 import mixing from '../media/mixing.png';
 import vdf from '../media/vdf.png';
+import person from '../media/person.svg';
 
 class Stack extends Component {
   render() {

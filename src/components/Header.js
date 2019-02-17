@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/macro';
-import human from '../media/iconmonstr-user-2.svg';
-import tri from '../media/triangle.svg';
+import person from '../media/person.svg';
+import shard from '../media/shard.svg';
 
 class Header extends Component {
   state = {
@@ -13,14 +13,14 @@ class Header extends Component {
         <Layout>
           <div>
             <div>Shards</div>
-            <img src={tri} />
-            <img src={tri} />
-            <img src={tri} />
+            <img src={shard} />
+            <img src={shard} />
+            <img src={shard} />
           </div>
           <div>
             <div>Validators</div>
             {this.state.humans.map((v, k) => {
-              return <img src={human} key={k} />;
+              return <img src={person} key={k} />;
             })}
           </div>
         </Layout>
