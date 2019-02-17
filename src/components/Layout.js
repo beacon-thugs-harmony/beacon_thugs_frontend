@@ -60,7 +60,7 @@ const OutterLayout = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #faf9f9;
-  padding-left: 40px;
+  padding-left: 15px;
   padding-right: 40px;
 `;
 const Row = styled.div`
