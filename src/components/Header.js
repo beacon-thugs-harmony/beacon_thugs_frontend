@@ -15,15 +15,6 @@ class Header extends Component {
       <Inner>
         <Box>
           <Title>Shards</Title>
-          {/* <div>{NSHARDS}</div>
-
-          {this.props.data[this.props.step].shard_validator.map(function(shard_v, index) {
-            return (
-              <div key={index}>
-                Shard {index} Validator: {shard_v}
-              </div>
-            );
-          })} */}
 
           <ShardSpace>
             <img src={shard} />

@@ -7,20 +7,29 @@ import Stack from './Stack';
 import { data } from '../data';
 
 class Layout extends Component {
-  state = { data: data, step: 0 };
+  state = { data: data, step: 0, MAXSTEPS:0 };
+
+  componentWillMount(){
+
+  console.log(this.state.data)
+    var MAXSTEPS = this.state.data[0].CONFIG.SIMULATION_EPOCHS * this.state.data[0].CONFIG.EPOCH_SLOTS;
+    this.setState({MAXSTEPS})
+  }
 
   next = () => {
-    let s = this.state.step + 1;
+    console.log(this.state.MAXSTEPS-1)
+    let s = Math.min(this.state.step + 1,this.state.MAXSTEPS-1);
     this.setState({ step: s });
   };
 
   next5 = () => {
-    let s = this.state.step + 5;
+    console.log(this.state.MAXSTEPS-1)
+    let s = Math.min(this.state.step + 5,this.state.MAXSTEPS-1);
     this.setState({ step: s });
   };
 
   prev = () => {
-    let s = this.state.step - 1;
+    let s = Math.max(this.state.step - 1,0);
     this.setState({ step: s });
   };
 
