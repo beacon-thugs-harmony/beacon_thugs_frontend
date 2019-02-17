@@ -43,7 +43,7 @@ class Header extends Component {
           </UserSpace>
         </Box>
         <Box>
-          <div>Simulation Genesis Constants</div>
+          <Title>Simulation Genesis Constants</Title>
           <div>SIMULATION_EPOCHS:{this.props.data[this.props.step].CONFIG.SIMULATION_EPOCHS}</div>
           <div>AMAX:{this.props.data[this.props.step].CONFIG.AMAX}</div>
           <div>NSHARDS:{this.props.data[this.props.step].CONFIG.NSHARDS}</div>

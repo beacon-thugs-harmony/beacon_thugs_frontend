@@ -13,11 +13,6 @@ class Timeline extends Component {
             <TheLine multi={this.props.step} />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
               <Title>Timeslot: {this.props.data[this.props.step].current_epoch_id}</Title>
-              <Title>
-                Beacon Validator ID:{' '}
-                {(Number(this.props.data[this.props.step].current_random_seed_r_j) * -1).toString().substring(0, 5) +
-                  '...'}
-              </Title>
               <Title>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</Title>
               <Title>
                 Current Random Seed:{' '}
