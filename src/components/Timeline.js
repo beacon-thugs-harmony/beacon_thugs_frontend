@@ -9,20 +9,25 @@ class Timeline extends Component {
     return (
       <Box>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Title>Timeslot:{this.props.data[this.props.step].current_epoch_id}</Title>
+          <Title>Timeslot: {this.props.data[this.props.step].current_epoch_id}</Title>
           <Title>
             Beacon Validator ID:{' '}
             {(Number(this.props.data[this.props.step].current_random_seed_r_j) * -1).toString().substring(0, 5) + '...'}
           </Title>
-          <Title>Current Random Seed: 6754…..</Title>
-          <div>Timeslot:{this.props.data[this.props.step].current_timeslot_id}</div>
-          <div>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</div>
-          <div>Current Random Seed: {this.props.data[this.props.step].current_random_seed_r_j} </div>
+          <Title>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</Title>
+          <Title>
+            Current Random Seed:{' '}
+            {this.props.data[this.props.step].current_random_seed_r_j.toString().substring(0, 5) + '...'}
+          </Title>
         </div>
 
         <div>
           {this.state.epocs.map((v, k) => {
-            return <Epoc data={this.props.data} step={this.props.step} />;
+            return (
+              <Slot multi={k}>
+                <Epoc data={this.props.data} step={this.props.step} key={k} />
+              </Slot>
+            );
           })}
         </div>
 
@@ -73,4 +78,11 @@ const Box = styled.div`
 const Title = styled.div`
   padding-bottom: 10px;
   font-weight: bold;
+`;
+
+const Slot = styled.div`
+  padding-left: ${props => props.multi * 50}px;
+  /* padding-left: 50px; */
+  font-weight: bold;
+  margin: 20px;
 `;
