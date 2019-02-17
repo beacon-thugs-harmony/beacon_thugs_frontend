@@ -15,12 +15,14 @@ class Header extends Component {
       <Inner>
         <Box>
           <Title>Shards</Title>
-
           <ShardSpace>
             <img src={shard} />
             <img src={shard} />
             <img src={shard} />
           </ShardSpace>
+          <div>Shard 0 Validator:{this.props.data[this.props.step].shard_validator[0]}</div>
+          <div>Shard 1 Validator:{this.props.data[this.props.step].shard_validator[1]}</div>
+          <div>Shard 2 Validator:{this.props.data[this.props.step].shard_validator[2]}</div>
         </Box>
         <Box>
           <Title>Validators</Title>

@@ -25,7 +25,7 @@ class Stack extends Component {
             <div>Reveal</div>
           </TopNav>
           <Process>
-            <GridHolder>P1</GridHolder>
+            <GridHolder>Slot 1</GridHolder>
             <UserStyle src={person} />
             <ArrowStyle src={arrow} />
             <GridHolderBig>
@@ -45,7 +45,7 @@ class Stack extends Component {
 
           {stepMod4 !== 0 && (
             <Process>
-              <GridHolder>P2</GridHolder>
+              <GridHolder>Slot 2</GridHolder>
               <UserStyle src={person} />
               <ArrowStyle src={arrow} />
               <GridHolderBig>
@@ -71,7 +71,7 @@ class Stack extends Component {
 
           {stepMod4 !== 0 && stepMod4 !== 1 && (
             <Process>
-              <GridHolder>P3</GridHolder>
+              <GridHolder>Slot 3</GridHolder>
               <UserStyle src={person} />
               <ArrowStyle src={arrow} />
               <GridHolderBig>
@@ -99,7 +99,7 @@ class Stack extends Component {
           )}
           {stepMod4 !== 0 && stepMod4 !== 1 && stepMod4 !== 2 && (
             <Process>
-              <GridHolder>P4</GridHolder>
+              <GridHolder>Slot 4</GridHolder>
               <UserStyle src={person} />
               <ArrowStyle src={arrow} />
               <GridHolderBig>
