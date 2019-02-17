@@ -7,18 +7,25 @@ class Header extends Component {
   state = {
     humans: [1, 2, 3, 4, 5, 6]
   };
+
   render() {
+      var NSHARDS = this.props.data[this.props.step].CONFIG.NSHARDS;
+
     return (
       <Inner>
         <Layout>
           <div>
             <div>Shards</div>
+
+            <div>{NSHARDS}</div>
+
             <img src={shard} />
             <img src={shard} />
             <img src={shard} />
-            <div>Shard 1 Validator:{this.props.data[this.props.step].shard_validator[0]}</div>
-            <div>Shard 2 Validator:{this.props.data[this.props.step].shard_validator[1]}</div>
-            <div>Shard 3 Validator:{this.props.data[this.props.step].shard_validator[2]}</div>
+
+            {this.props.data[this.props.step].shard_validator.map(function(shard_v, index){
+                 return <div key={ index }>Shard {index} Validator: {shard_v}</div>;
+            })}
 
           </div>
           <div>
