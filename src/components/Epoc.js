@@ -4,7 +4,7 @@ class Epoc extends Component {
   render() {
     return (
       <div style={{ display: 'flex' }}>
-        <div>Epoch {this.props.data[this.props.step].current_epoch_id} </div>
+        <div>Epoch {this.props.index} </div>
         <div>  Mix  </div>
         <div>  VDF  </div>
         <div>  Proof Buffer  </div>
