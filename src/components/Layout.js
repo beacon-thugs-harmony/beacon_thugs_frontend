@@ -32,6 +32,9 @@ export default Layout;
 const OutterLayout = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #faf9f9;
+  padding-left: 40px;
+  padding-right: 40px;
 `;
 const Row = styled.div`
   display: flex;
