@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/macro';
 import person from '../media/person.svg';
+import person_red from '../media/person_red.svg';
+import person_green from '../media/person_green.svg';
+import person_blue from '../media/person_blue.svg';
+import person_grey from '../media/person_grey.svg';
 import shard from '../media/shard.svg';
+import shard_blue from '../media/shard_blue.svg';
 
 class Header extends Component {
   state = {
