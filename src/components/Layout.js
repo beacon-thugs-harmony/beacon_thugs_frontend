@@ -14,12 +14,22 @@ class Layout extends Component {
     this.setState({ step: s });
   };
 
+  next5 = () => {
+    let s = this.state.step + 5;
+    this.setState({ step: s });
+  };
+
+  prev = () => {
+    let s = this.state.step - 1;
+    this.setState({ step: s });
+  };
+
   render() {
     return (
       <OutterLayout>
         <Header data={this.state.data} step={this.state.step} />
         <Row>
-          <Timeline next={this.next} data={this.state.data} step={this.state.step} />
+          <Timeline next5={this.next5} prev={this.prev} next={this.next} data={this.state.data} step={this.state.step} />
           <Stack data={this.state.data} step={this.state.step} />
         </Row>
       </OutterLayout>

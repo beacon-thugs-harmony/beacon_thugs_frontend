@@ -7,11 +7,24 @@ class Header extends Component {
   state = {
     humans: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   };
+
   render() {
+    var NSHARDS = this.props.data[this.props.step].CONFIG.NSHARDS;
+
     return (
       <Inner>
         <Box>
           <Title>Shards</Title>
+          {/* <div>{NSHARDS}</div>
+
+          {this.props.data[this.props.step].shard_validator.map(function(shard_v, index) {
+            return (
+              <div key={index}>
+                Shard {index} Validator: {shard_v}
+              </div>
+            );
+          })} */}
+
           <ShardSpace>
             <img src={shard} />
             <img src={shard} />
@@ -20,14 +33,15 @@ class Header extends Component {
         </Box>
         <Box>
           <Title>Validators</Title>
+
           <UserSpace>
             {this.state.humans.map((v, k) => {
               return <UserImg src={person} key={k} />;
             })}
+            <div>Beacon Validator ID:{this.props.data[this.props.step].current_beacon_validator_id}</div>
           </UserSpace>
         </Box>
-
-        <Box style={{ textAlign: 'left' }}>
+        <Box>
           <div>Simulation Genesis Constants</div>
           <div>SIMULATION_EPOCHS:{this.props.data[this.props.step].CONFIG.SIMULATION_EPOCHS}</div>
           <div>AMAX:{this.props.data[this.props.step].CONFIG.AMAX}</div>
