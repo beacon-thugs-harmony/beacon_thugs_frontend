@@ -9,14 +9,16 @@ class Timeline extends Component {
       <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div>Timeslot:{this.props.data[this.props.step].current_epoch_id}</div>
-          <div>Beacon Validator ID: {Number(this.props.data[this.props.step].current_random_seed_r_j) * -1}</div>
-          <div>Current Random Seed: 6754…..</div>
+          <div>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</div>
+          <div>Current Random Seed: {this.props.data[this.props.step].current_random_seed_r_j} </div>
         </div>
+
         <div>
           {this.state.epocs.map((v, k) => {
             return <Epoc data={this.props.data} step={this.props.step} />;
           })}
         </div>
+
         <button
           onClick={() => {
             this.props.next();
