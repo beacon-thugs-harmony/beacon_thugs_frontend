@@ -48,30 +48,30 @@ class Timeline extends Component {
               </Slot>
             </div>
           </div>
-          <button
-            onClick={() => {
-              this.props.next();
-            }}
-          >
-            Next
-          </button>
+          <ButtonHolder>
+            <ButtonStyle
+              onClick={() => {
+                this.props.prev();
+              }}
+            >
+              Previous
+            </ButtonStyle>
+            <ButtonStyle
+              onClick={() => {
+                this.props.next();
+              }}
+            >
+              Next >
+            </ButtonStyle>
 
-          <button
-            onClick={() => {
-              this.props.next5();
-            }}
-          >
-            Next5
-          </button>
-
-          <button
-            onClick={() => {
-              this.props.prev();
-            }}
-          >
-            Previous
-          </button>
-
+            <ButtonStyle
+              onClick={() => {
+                this.props.next5();
+              }}
+            >
+              Next >>
+            </ButtonStyle>
+          </ButtonHolder>
           <div>Current time slot:{this.props.step}</div>
         </Box>
       </div>
@@ -111,4 +111,23 @@ const TheLine = styled.div`
   position: absolute;
   top: 308px;
   left: ${props => props.multi * 24.1 + 138}px;
+`;
+
+const ButtonStyle = styled.button`
+  color: white;
+  background-color: #4a90e2;
+  /* width: 60px; */
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 33px;
+  border: none;
+  font-size: 14px;
+  border-radius: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+`;
+
+const ButtonHolder = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
