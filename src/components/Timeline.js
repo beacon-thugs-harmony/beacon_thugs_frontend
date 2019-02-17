@@ -14,7 +14,7 @@ class Timeline extends Component {
         </div>
         <div>
           {this.state.epocs.map((v, k) => {
-            return <Epoc />;
+            return <Epoc data={this.props.data} step={this.props.step} />;
           })}
         </div>
         <button
