@@ -18,7 +18,7 @@ class Stack extends Component {
       <Box>
         <Epoc>
           <div>
-            <TitleEpoc>Epoc {this.props.data[step].current_epoch_id}</TitleEpoc>
+            <TitleEpoc>Epoch {this.props.data[step].current_epoch_id}</TitleEpoc>
             <div style={{ display: 'flex' }}>Mixing</div>
           </div>
           <TopNav>
@@ -147,7 +147,7 @@ class Stack extends Component {
         <Epoc>
           <div>
             <TitleEpoc>
-              Epoc {this.props.data[step].current_epoch_id > 0 ? this.props.data[step].current_epoch_id - 1 : '?'}
+              Epoch {this.props.data[step].current_epoch_id > 0 ? this.props.data[step].current_epoch_id - 1 : '?'}
             </TitleEpoc>
           </div>
           <Row>
@@ -164,7 +164,7 @@ class Stack extends Component {
         <Epoc>
           <div>
             <TitleEpoc>
-              Epoc {this.props.data[step].current_epoch_id > 1 ? this.props.data[step].current_epoch_id - 2 : '?'}
+              Epoch {this.props.data[step].current_epoch_id > 1 ? this.props.data[step].current_epoch_id - 2 : '?'}
             </TitleEpoc>
           </div>
           <Row>
@@ -182,7 +182,7 @@ class Stack extends Component {
         <Epoc>
           <div>
             <TitleEpoc>
-              Epoc {this.props.data[step].current_epoch_id > 2 ? this.props.data[step].current_epoch_id - 3 : '?'}
+              Epoch {this.props.data[step].current_epoch_id > 2 ? this.props.data[step].current_epoch_id - 3 : '?'}
             </TitleEpoc>
           </div>
           <Row>
