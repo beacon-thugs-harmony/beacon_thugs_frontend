@@ -5,7 +5,7 @@ class Epoc extends Component {
   render() {
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div>Epoch {this.props.data[this.props.step].current_epoch_id} </div>
+        <div>Epoch {this.props.index}</div>
         <Box>
           <MinBox>Mix</MinBox>
           <MinBox>VDF</MinBox>

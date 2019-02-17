@@ -23,3 +23,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.vs/beacon-vdf-sim-frontend/v15
+/.vs/beacon_thugs_frontend/v15
+/.vs
+/bin
+/obj/Debug
+*.njsproj
+*.sln

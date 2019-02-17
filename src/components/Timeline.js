@@ -25,7 +25,7 @@ class Timeline extends Component {
           {this.state.epocs.map((v, k) => {
             return (
               <Slot multi={k}>
-                <Epoc data={this.props.data} step={this.props.step} key={k} />
+                <Epoc data={this.props.data} step={this.props.step} key={k} index={k}/>
               </Slot>
             );
           })}
