@@ -2,7 +2,7 @@ Eth 2.0 Beacon Chain Web Application
 
 ## Simulation Output
 
-![Beacon Chain Web App Image](Beacon_WebApp.png?raw=true "Beacon Chain Simulation")
+![Beacon Chain Web App Image](src/media/Beacon_WebApp.png?raw=true "Beacon Chain Simulation")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
