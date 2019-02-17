@@ -7,29 +7,31 @@ import Stack from './Stack';
 import { data } from '../data';
 
 class Layout extends Component {
-  state = { data: data, step: 0, MAXSTEPS:0 };
+  state = { data: data, step: 0, MAXSTEPS: 0 };
 
-  componentWillMount(){
-
-  console.log(this.state.data)
+  componentWillMount() {
+    console.log(this.state.data);
     var MAXSTEPS = this.state.data[0].CONFIG.SIMULATION_EPOCHS * this.state.data[0].CONFIG.EPOCH_SLOTS;
-    this.setState({MAXSTEPS})
+    this.setState({ MAXSTEPS });
   }
 
   next = () => {
-    console.log(this.state.MAXSTEPS-1)
-    let s = Math.min(this.state.step + 1,this.state.MAXSTEPS-1);
-    this.setState({ step: s });
+    let max = this.state.data[0].CONFIG.SIMULATION_EPOCHS * this.state.data[0].CONFIG.EPOCH_SLOTS;
+    console.log(this.state.MAXSTEPS - 1);
+    let s = Math.min(this.state.step + 1, this.state.MAXSTEPS - 1);
+    if (this.state.step < max) {
+      this.setState({ step: s });
+    }
   };
 
   next5 = () => {
-    console.log(this.state.MAXSTEPS-1)
-    let s = Math.min(this.state.step + 5,this.state.MAXSTEPS-1);
+    console.log(this.state.MAXSTEPS - 1);
+    let s = Math.min(this.state.step + 5, this.state.MAXSTEPS - 1);
     this.setState({ step: s });
   };
 
   prev = () => {
-    let s = Math.max(this.state.step - 1,0);
+    let s = Math.max(this.state.step - 1, 0);
     this.setState({ step: s });
   };
 
@@ -38,7 +40,13 @@ class Layout extends Component {
       <OutterLayout>
         <Header data={this.state.data} step={this.state.step} />
         <Row>
-          <Timeline next5={this.next5} prev={this.prev} next={this.next} data={this.state.data} step={this.state.step} />
+          <Timeline
+            next5={this.next5}
+            prev={this.prev}
+            next={this.next}
+            data={this.state.data}
+            step={this.state.step}
+          />
           <Stack data={this.state.data} step={this.state.step} />
         </Row>
       </OutterLayout>
