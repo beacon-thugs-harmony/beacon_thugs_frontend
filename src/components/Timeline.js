@@ -8,7 +8,7 @@ class Timeline extends Component {
     return (
       <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div>Timeslot:{this.props.data[this.props.step].current_epoch_id}</div>
+          <div>Timeslot:{this.props.data[this.props.step].current_timeslot_id}</div>
           <div>Beacon Validator ID: {this.props.data[this.props.step].current_beacon_validator_id}</div>
           <div>Current Random Seed: {this.props.data[this.props.step].current_random_seed_r_j} </div>
         </div>
@@ -43,7 +43,7 @@ class Timeline extends Component {
           Previous
          </button>
 
-        <div>Current slot:{this.props.step}</div>
+        <div>Current time slot:{this.props.step}</div>
       </div>
     );
   }

@@ -16,12 +16,17 @@ class Header extends Component {
             <img src={shard} />
             <img src={shard} />
             <img src={shard} />
+            <div>Shard 1 Validator:{this.props.data[this.props.step].shard_validator[0]}</div>
+            <div>Shard 2 Validator:{this.props.data[this.props.step].shard_validator[1]}</div>
+            <div>Shard 3 Validator:{this.props.data[this.props.step].shard_validator[2]}</div>
+
           </div>
           <div>
             <div>Validators</div>
             {this.state.humans.map((v, k) => {
               return <img src={person} key={k} />;
             })}
+            <div>Beacon Validator ID:{this.props.data[this.props.step].current_beacon_validator_id}</div>
           </div>
         </Layout>
         <div style={{ textAlign: 'left' }}>
