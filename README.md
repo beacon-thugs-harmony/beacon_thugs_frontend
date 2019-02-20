@@ -1,4 +1,4 @@
-Eth 2.0 Beacon Chain Web Application
+Eth 2.0 Beacon Chain Interactive Web Simulation
 
 ## Simulation Output
 
